@@ -26,10 +26,15 @@ local function luna2lua(l)
 	return _toLua(toAST(l))
 end
 
+luna = {}
+function luna.TranspileCode(luna)
+	return luna2lua(luna)
+end
+
 local function TranspileAll()
 	local function cb(path)
 		local luna = file.Read(path, "MOD")
-		local b = TranspileLuna("./garrysmod/" .. path, luna2lua(luna))
+		local b = TranspileLuna("./garrysmod/" .. path, luna.TranspileCode(luna))
 		if b == false then
 			print("transpiling luna file at ", path, " failed!")
 		end
