@@ -1,0 +1,4 @@
+autotranspiler/windows-vs2010
+autotranspiler/linux-gmake
+autotranspiler/macosx-gmake
+autotranspiler/lib
