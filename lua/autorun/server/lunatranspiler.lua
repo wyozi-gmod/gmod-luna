@@ -33,8 +33,8 @@ end
 
 local function TranspileAll()
 	local function cb(path)
-		local luna = file.Read(path, "MOD")
-		local b = TranspileLuna("./garrysmod/" .. path, luna.TranspileCode(luna))
+		local lunac = file.Read(path, "MOD")
+		local b = TranspileLuna("./garrysmod/" .. path, luna.TranspileCode(lunac))
 		if b == false then
 			print("transpiling luna file at ", path, " failed!")
 		end
